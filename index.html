@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>PlateEditor</title>
+	<link href="dist/ui-styles.css" rel="stylesheet" type="text/css">
+	<link href="dist/editor-styles.css" rel="stylesheet" type="text/css">
+	<link href="dist/shared-styles.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="dependencies/papaparse.min.js"></script> <!--// https://www.papaparse.com //-->
+	<script type="text/javascript" src="dependencies/jszip.min.js"></script> <!--// http://stuk.github.io/jszip //-->
+	
+	<script type="text/javascript" src="dist/ui.min.js"></script>
+	<script type="text/javascript" src="dist/shared.min.js"></script>
+	<script type="text/javascript" src="dist/editor.min.js"></script>
+	
+	<script type="text/javascript">
+		window.onload = function() {Editor.init()}
+	</script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!--
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J2GQ2TKJJ"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-6J2GQ2TKJJ');
+	</script>
+	-->
+</head>
+
+<body style="font-family: arial; font-size: 16px" ondrop="event.preventDefault()" ondragover="event.preventDefault()">
+<!--
+<div id="Header">
+	<p style="text-align: center"><b>Mediverse PlateEditor</b></p>
+</div>
+-->
+<div id="Console" class="LinkCtrl_Tab LinkCtrl_Round" style="padding: 0.3em">
+	<p style="text-align: center">
+		<b>Welcome to <i>Mediverse PlateEditor</i></b><br>
+	</p>
+</div>
+
+<div>
+	<div id="Editor_Popup" class="Popup"></div>
+	<div id="Editor_Menu" style="float: left; width: 23em; max-height: 85vh; overflow: auto"></div>
+	<div id="Editor_Main" style="margin-left: 24em; max-height: 85vh; overflow: auto"></div>
+</div>
+
+<style>
+#Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #f5f5f5;
+  border-radius: 999px;
+  width: fit-content;
+  margin: 40px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+#Footer a {
+  text-decoration: none;
+  margin: 0 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+#Footer img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin: 0 4px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+#Footer img:hover {
+  opacity: 1;
+}
+
+#Footer span {
+  margin: 0 8px;
+  color: #ff7a18; /* Soft orange */
+  font-weight: 600;
+}
+</style>
+
+<div id="Footer">
+  <span>Built with love from PlateEditor 🧡</span>
+  <a href="https://sourceforge.net/p/plateeditor/" target="_blank" rel="noreferrer noopener">
+    <img src="images/sourceforge.png" alt="SourceForge">
+  </a>
+  <a href="https://github.com/vindelorme/PlateEditor" target="_blank" rel="noreferrer noopener">
+    <img src="images/github.jpg" alt="GitHub">
+  </a>
+  <a href="https://doi.org/10.1371/journal.pone.0252488" target="_blank" rel="noreferrer noopener">
+    <img src="images/doi-icon.png" alt="DOI">
+  </a>
+</div>
+
+</body>
+</html>
