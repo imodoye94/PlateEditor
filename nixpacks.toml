@@ -1,0 +1,8 @@
+[phases.build]
+cmds = [
+  "npm install",
+  "npm run compil"
+]
+
+[phases.start]
+cmds = ["npx serve dist"]
