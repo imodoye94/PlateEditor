@@ -628,26 +628,28 @@ class Editor {
 		Reporter.hits(controls, areas, Plate.flatten(this.Plate));
 		return this;
 	}
-	// Listen for messages from the parent window
-	window.addEventListener('message', (event) => {
-
-	  if (event.origin !== 'https://lims.mediverse.ai') return;
-	
-	  if (event.data.type === 'plate-load') {
-	    console.log('Received plate layout from parent:', event.data.data);
-	
-	    try {
-	      // Safely attempt to load the data directly into the editor
-	      Editor.reset();
-	      Editor.loadData(
-	        event.data.data[0], // plate object
-	        event.data.data[1]  // areas array
-	      );
-	      Editor.Console.log({ Message: "Layout loaded from LIMS", Gravity: "Success" });
-	    } catch (error) {
-	      console.error("Error loading plate data:", error);
-	      Editor.Console.log({ Message: "Failed to load layout from LIMS", Gravity: "Error" });
-	    }
-	  }
-	});
 }
+
+// Listen for messages from the parent window
+window.addEventListener('message', (event) => {
+
+  if (event.origin !== 'https://lims.mediverse.ai') return;
+
+  if (event.data.type === 'plate-load') {
+    console.log('Received plate layout from parent:', event.data.data);
+
+    try {
+      // Safely attempt to load the data directly into the editor
+      Editor.reset();
+      Editor.loadData(
+        event.data.data[0], 
+        event.data.data[1]  
+      );
+      Editor.Console.log({ Message: "Layout loaded from LIMS", Gravity: "Success" });
+    } catch (error) {
+      console.error("Error loading plate data:", error);
+      Editor.Console.log({ Message: "Failed to load layout from LIMS", Gravity: "Error" });
+    }
+  }
+});
+
