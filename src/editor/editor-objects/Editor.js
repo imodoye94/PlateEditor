@@ -272,7 +272,7 @@ class Editor {
 		  type: 'plate-save',
 		  data: JSON.parse(save),
 		}, '*');
-		Form.download(save, {DataType: "text/json;charset=utf-8", FileName: "Layout.save"});
+		//Form.download(save, {DataType: "text/json;charset=utf-8", FileName: "Layout.save"});
 		return this;
 	}
 	static load() { //Load a layout from file
@@ -655,4 +655,3 @@ window.addEventListener('message', (event) => {
     }
   }
 });
-
