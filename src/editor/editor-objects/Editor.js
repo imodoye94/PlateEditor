@@ -633,7 +633,7 @@ class Editor {
 // Listen for messages from the parent window
 window.addEventListener('message', (event) => {
 
- if (event.origin !== 'https://lims.mediverse.ai' || 'https://editor.weweb.io') {
+ if (event.origin !== 'https://lims.mediverse.ai' && event.origin !== 'https://editor.weweb.io') {
 	console.log('unkown message origin in parent');
 	return;
 }
