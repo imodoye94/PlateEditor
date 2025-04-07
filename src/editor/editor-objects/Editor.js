@@ -633,7 +633,10 @@ class Editor {
 // Listen for messages from the parent window
 window.addEventListener('message', (event) => {
 
-  if (event.origin !== 'https://lims.mediverse.ai') return;
+ if (event.origin !== 'https://lims.mediverse.ai' || 'https://editor.weweb.io') {
+	console.log('unkown message origin in parent');
+	return;
+}
 
   if (event.data.type === 'plate-load') {
     console.log('Received plate layout from parent:', event.data.data);
