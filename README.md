@@ -76,21 +76,6 @@ For a more complete and detailed presentation of all Mediverse Plate Editor's fu
 ## Contributing
 Please let us know if you see any bugs or encounter display issues in your browser.
 
-## Deploying to Google Cloud Run
-
-The repository now contains a `Dockerfile` and `cloudbuild.yaml` so it can be
-built and deployed directly from Google Cloud. A typical workflow is:
-
-1. In the GCP Console open **Cloud Build → Triggers** and connect your
-   GitHub repository.
-2. Create a trigger that builds the Docker image using the provided
-   `cloudbuild.yaml` whenever you push new commits.
-3. In **Cloud Run** choose **Deploy from existing container image** and select
-   the image built by Cloud Build.
-
-The container serves the static site on port `8080`, which is the default port
-for Cloud Run services.
-
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
